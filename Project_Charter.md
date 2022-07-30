@@ -31,7 +31,7 @@ Create a tool  to store and display information about track and field in Ontario
   3. Design of database finalized
   4. Deploy test database with large set dummy information
   5. Backend communicates with database
-  6. Backend request are routed
+  6. Backend request are routed (routes are created)
   7. Backend requests are handled and respond with accurate data
   8. Deploy live database with all recorded AO information
   9. Frontend contains all views required by the user
