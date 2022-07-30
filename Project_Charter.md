@@ -31,14 +31,15 @@ Create a tool  to store and display information about track and field in Ontario
   3. Design of database finalized
   4. Deploy test database with large set dummy information
   5. Backend communicates with database
-  6. Backend request are routed (routes are created)
-  7. Backend requests are handled and respond with accurate data
-  8. Deploy live database with all recorded AO information
-  9. Frontend contains all views required by the user
-  10. Frontend styling is finalized
-  11. Modules and components created for viewing data in table-form (the view of ranking page data shall be reused by multiple other components with different fields displayed)
-  12. Secure login created
-  13. Login information sync with AO member data
+  6. Defined all required endpoints to minimize data transfer
+  7. Backend request are routed (routes are created and resolve to endpoints)
+  8. Backend requests are handled and respond with accurate data
+  9. Deploy live database with all recorded AO information
+  10. Frontend contains all views required by the user
+  11. Frontend styling is finalized
+  12. Modules and components created for viewing data in table-form (the view of ranking page data shall be reused by multiple other components with different fields displayed)
+  13. Secure login created
+  14. Login information sync with AO member data
 
 ### 5. Deliverables
   1. Database up and running
