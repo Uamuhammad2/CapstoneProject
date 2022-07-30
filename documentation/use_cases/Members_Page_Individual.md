@@ -1,4 +1,4 @@
-## View ranking page
+## View individual member
 
 ### Actor (User)
 A general user of the application without admin access
