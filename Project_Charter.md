@@ -19,6 +19,12 @@ A number of tools not currently available from other services will be implemente
 Create a tool  to store and display information about track and field in Ontario
 
 ### 3. Milestones
+  1. Decide what is to be displayed on each view of the final product
+  2. List of technological choices for front-end, back-end, database and hosting/domain defined: 
+  3. Sort out methods of accessing data (from trackie / AO 3PL) to populate database
+  4. Design schema for the database and queries required to access required data to be displayed
+  5. Deploy database
+  6. Connect React project to SQL server
 
 ### 4. Deliverables
 
