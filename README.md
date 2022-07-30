@@ -25,7 +25,7 @@ The information system will have a 3-tiered approach.
   
 Secure login system will need to be implemented due to admins possibly having catestrophic power
 
-The web app will be created using React for the front end. The backend will be driven by nodejs / express  and employing a SQL server database 
+The web app will be created using React for the front end. The backend will be driven by Next.js  and employing a SQL server database 
 
 | Project Role        | Assigned        |    
 | -------------       |:-------------: |
