@@ -2,7 +2,6 @@
 
 ### Hytek
 ## events
-indoor/outdoor
 male/female
 outdoor # is this tied to the event or the sport?
   sprint
