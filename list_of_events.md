@@ -6,52 +6,36 @@ Hytek
     male/female
   outdoor
    sprint
-    - 80m
-    - 100m
-    - 150m
-    - 200m
-    - 300m
-    - 400m
+    - mark
+    - distance
+    - wind
 
    Hurdle
-    - 80m 
-    - 100m
-    - 110m
-    - 200m
-    - 300m
-    - 400m
+    - mark
+    - distance
+    - wind
+    - barrier height
   
-  distance (running)
-    - 600m
-    - 800m
-    - 1000m
-    - 1200m
-    - 1500m
-    - 2000m
-    - 3000m
-    - 5000m
-    - 10000m
+   run
+   - mark
+   - distance
     
   steeple chase
-    - 1500m
-    - 2000m
-    - 3000m
+    - mark
+    - distance
+    - barrier height
     
   race walk
-    - 800m
-    - 1500m
-    - 3000m
-    - 5000m
+    - mark
+    - distance
   
   relay
-    - 4 x 100m
-    - 4x 200m
-    - 4x 400m
-    - 4x 800m
-  
+    - mark
+    - distance (total distance)
+    
   medley relay
-    - 400m 200m 200m 800m
-    - 1200m 400m 800m 1600m
+    - mark
+    - distance (total distance)
   
   high jump
     - mark
