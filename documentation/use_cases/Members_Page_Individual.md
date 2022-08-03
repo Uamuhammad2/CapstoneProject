@@ -14,9 +14,9 @@ A general user of the application without admin access
 6. Backend handles the request by requesting information from the SQL server via query of the meet ID
 7. Backend receives data of all performance data by the matching AC ID in JSON format and hands back to frontend
 8. Frontend formats data for displaying to the user
-  - divide by day (day 1, day 2, day 3)
-  - format by date + time if available
-  - format by sport code if unavailable
+    - divide by day (day 1, day 2, day 3)
+    - format by date + time if available
+    - format by sport code if unavailable
 
 ### Alternate Flows
 - If combination of filters returns no results
