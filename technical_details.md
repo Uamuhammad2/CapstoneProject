@@ -1,6 +1,6 @@
 ## Back-End
 
-The back-end is driven by an [express 4.18](https://www.npmjs.com/package/express) framework available through [node.js 18.2](https://nodejs.org/en/) hosted on a [google cloud virtual machine ](https://cloud.google.com/compute).
+The back-end is driven by an [express 4.18](https://www.npmjs.com/package/express) framework run through [Next.js](https://nextjs.org/docs/getting-started)'s middleware system, hosted on a [google cloud virtual machine ](https://cloud.google.com/compute).
 The data is communicated from an [SQL server](https://www.microsoft.com/en-ca/sql-server/sql-server-downloads) hosted on a google cloud virtual machine to the front-end using REST api
 
 ## Front-End
