@@ -1,4 +1,4 @@
-## View ranking page
+## View individual meet
 
 ### Actor (User)
 A general user of the application without admin access
@@ -9,14 +9,10 @@ A general user of the application without admin access
 - The web app is deployed
 
 ### Main Flow
-1. User navigates to the ranking page
-2. Web app displays a set of filters
-3. User selects all filters they want to view and clicks the search button
-4. Frontend selects the correct endpoint to direct the request to
-5. Frontend will display a loading notification while waiting for the request to resolve
-6. Backend handles the request by requesting information from the SQL server via query
-7. Backend receives data in JSON format and hands back to frontend
-8. Frontend formats data for displaying to the user
+1. User clicked on the name of a meet
+2. Frontend selects the correct endpoint to direct the request to
+3. Backend handles the request by requesting information from the SQL server via query of the event name
+3. Display a page with clickable tabs to show the results of each event in that meet
 
 ### Alternate Flows
 - If combination of filters returns no results
