@@ -1,6 +1,3 @@
-# Notes from meeting Aug 3 2022
-
-### Hytek
 ## events
 male/female
 outdoor/indoor
