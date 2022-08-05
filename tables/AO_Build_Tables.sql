@@ -1,10 +1,12 @@
 CREATE TABLE Sport(
 	sport_id INT IDENTITY(1,1) NOT NULL UNIQUE,
+	season VARCHAR(7) NOT NULL,
 	sport_name VARCHAR(50) NOT NULL,
-	sport_division1 VARCHAR(50) NOT NULL,
+	sport_division1 VARCHAR(50),
 	sport_division2 VARCHAR(50),
 	PRIMARY KEY(sport_id)
 )
+
 
 CREATE TABLE Multisport(
 	multisport_id INT IDENTITY(1,1) NOT NULL UNIQUE,
@@ -145,3 +147,5 @@ CREATE TABLE MultisportResult(
 	FOREIGN KEY(result_9) REFERENCES Result(result_id),
 	FOREIGN KEY(result_10) REFERENCES Result(result_id),
 )
+
+
