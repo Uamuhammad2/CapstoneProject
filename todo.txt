@@ -1,0 +1,14 @@
+results - needs to store relay team members
+need to manual edit results - requires specific access
+
+
+Members have an option to claim results without AC number if the lname year of birth matches with a result without an AC number
+
+calculate club points earned for multisport events (not given by hytek)
+
+after upload, create a csv/pdf of all rejected results
+
+create an option to upload a single result
+
+age grade library https://github.com/Runalyze/age-grade
+
