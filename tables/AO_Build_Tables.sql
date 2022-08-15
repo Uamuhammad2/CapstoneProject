@@ -7,7 +7,6 @@ CREATE TABLE Sport(
 	PRIMARY KEY(sport_id)
 )
 
-
 CREATE TABLE Multisport(
 	multisport_id INT IDENTITY(1,1) NOT NULL UNIQUE,
 	multisport_name VARCHAR(50) NOT NULL,
@@ -65,20 +64,38 @@ CREATE TABLE Club(
 	club_name VARCHAR (50) NOT NULL UNIQUE
 )
 
+CREATE TABLE Notes(
+	note_id INT IDENTITY (1,1) NOT NULL UNIQUE,
+	note_content VARCHAR(255),
+	PRIMARY KEY (note_id)
+)
+
+CREATE TABLE Disability(
+	disability_id INT IDENTITY (1,1) NOT NULL UNIQUE,
+	disability_class VARCHAR(4) NOT NULL,
+	disability_description VARCHAR(50),
+
+	PRIMARY KEY (disability_id)
+)
+
 CREATE TABLE Athlete(
-	ac_num INT NOT NULL UNIQUE,
+	athlete_id INT IDENTITY(1,1) UNIQUE NOT NULL,
+	ac_num INT UNIQUE,
 	fname VARCHAR(20) NOT NULL,
 	lname VARCHAR(20) NOT NULL,
 	dob date NOT NULL,
 	sex VARCHAR(1) NOT NULL,
 	current_club VARCHAR(4) NULL,
-	disability VARCHAR(10) NULL,
-	notes VARCHAR(255) NULL,
+	current_disability INT NULL,
+	notes INT NULL,
 	member_since date NOT NULL,
 	renewed_on date NULL,
+	total_points INT NOT NULL,
 
-	PRIMARY KEY (ac_num),
-	FOREIGN KEY (current_club) REFERENCES Club(club_code)
+	PRIMARY KEY (athlete_id),
+	FOREIGN KEY (current_club) REFERENCES Club(club_code),
+	FOREIGN KEY (notes) REFERENCES Notes(note_id),
+	FOREIGN KEY (current_disability) REFERENCES Disability(disability_id)
 )
 
 
@@ -86,25 +103,29 @@ CREATE TABLE Result(
 	result_id INT IDENTITY(1,1) NOT NULL UNIQUE, -- PK
 	sport_id INT NOT NULL, --FKs
 	meet_id INT NOT NULL,
-	ac_num INT NOT NULL, 
+	athlete INT NOT NULL,
+	current_disability INT,
 	facility_id INT NOT NULL,
 	club_affil VARCHAR(4) NOT NULL, -- end of FKs
 	result_date DATE NOT NULL,
 	result_time TIME NOT NULL,
-	mark VARCHAR(10),
-	wind VARCHAR(10),
+	mark VARCHAR(6),
+	wind DECIMAL(4,2),
 	overall_placement INT,
 	heat_placement INT,
-	notes VARCHAR(255),
+	notes INT,
 	is_multi BIT
 
 	PRIMARY KEY(result_id),
 	FOREIGN KEY(sport_id) REFERENCES Sport(sport_id),
 	FOREIGN KEY(meet_id) REFERENCES Meet(meet_id),
-	FOREIGN KEY(ac_num) REFERENCES  Athlete(ac_num),
+	FOREIGN KEY(athlete) REFERENCES  Athlete(athlete_id),
+	FOREIGN KEY (current_disability) REFERENCES Disability(disability_id),
 	FOREIGN KEY(facility_id) REFERENCES Facility(facility_id),
-	FOREIGN KEY(club_affil) REFERENCES Club(club_code)
+	FOREIGN KEY(club_affil) REFERENCES Club(club_code),
+	FOREIGN KEY (notes) REFERENCES Notes(note_id)
 )
+
 
 CREATE TABLE MultisportResult(
 	multisport_result_id INT IDENTITY(1,1) NOT NULL UNIQUE, -- PK
