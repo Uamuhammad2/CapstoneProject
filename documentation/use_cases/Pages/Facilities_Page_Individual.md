@@ -15,8 +15,8 @@ A general user of the application without admin access
 7. Backend receives data of the club and in JSON format and hands it back to the frontend
 8. Frontend formats data for displaying to the user
     - contains a general tab with name, address, contact info and notes
-    - contains a Personal Best tab page of the club with the best result of every sport with an athlete in that club
-    - contains a Progress tab with the best results of the latest 3 years for each sport with an athlete in that club
+    - contains a Bests page of the highest mark achieved in this facility for each sport
+    - contains a Progress tab with the best results of each year in that facility
     - contains a Results tab showing a [ranking page](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Ranking_Page.md) with a filter of in the club already applied
 
 ### Alternate Flows
