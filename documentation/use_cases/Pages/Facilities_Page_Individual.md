@@ -14,10 +14,15 @@ A general user of the application without admin access
 6. Backend handles the request by requesting information from the SQL server via query of the facility name
 7. Backend receives data of the club and in JSON format and hands it back to the frontend
 8. Frontend formats data for displaying to the user
+  - contains a general tab with name, address, contact info and notes
+  - contains a Personal Best tab page of the club with the best result of every sport with an athlete in that club
+  - contains a Progress tab with the best results of the latest 3 years for each sport with an athlete in that club
+  - contains a Results tab showing a [ranking page](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Ranking_Page.md) with a filter of in the club already applied
 
 ### Alternate Flows
 - If there is some sort of error with communication between the server and endpoint
   1. the user will be notified with an informative error message
+- if any of the tabs fails to get information, instead of returning a blank table, prompt that the system has failed to find results
 
 ### Post conditions
 - all results pertaining to the filters shall be displayed to the user
