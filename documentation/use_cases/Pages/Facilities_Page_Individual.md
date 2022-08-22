@@ -17,7 +17,7 @@ A general user of the application without admin access
     - contains a general tab with name, address, contact info and notes
     - contains a Bests page of the highest mark achieved in this facility for each sport
     - contains a Progress tab with the best results of each year in that facility
-    - contains a Results tab showing a [ranking page](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Ranking_Page.md) with a filter of in the facility already applied
+    - contains a Results tab showing a [ranking table](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Ranking_Page.md) with a filter of in the facility already applied
 
 ### Alternate Flows
 - If there is some sort of error with communication between the server and endpoint
