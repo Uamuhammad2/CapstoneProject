@@ -15,7 +15,7 @@ A general user of the application without admin access
 4. Backend handles the request by requesting information from the SQL server via query
 5. Backend receives data in JSON format and hands back to frontend
 6. Frontend formats data for displaying to the user
-7. Web app displays all meets on record with a clickable name linking to the [individual meet page](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Meets_Page_Individual.md)
+7. Web app displays all meets on record with a clickable name linking to the [individual meet page](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Meets_Page_Individual.md) in chronological order
 
 ### Alternate Flows
 - If there is some sort of error with communication between the server and endpoint
