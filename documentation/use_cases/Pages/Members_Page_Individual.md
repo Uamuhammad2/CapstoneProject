@@ -15,6 +15,7 @@ A general user of the application without admin access
 7. Backend receives data of all performance data by the matching AC ID in JSON format and hands back to frontend
 8. Frontend formats data for displaying to the user
     - Personal info tab: displays AC#, name, sex, current club, hometown, awards, disability if applicable, notes if applicable
+    - *The following displays all results irrespective of whether an active membership was associated with it. A flag will show non-active results*
     - Personal Bests tab: displays best mark of every discipline completed by the athlete - separate headings for Outdoor/Indoor
     - Progression tab: displays the PB for each year on record for each sport
     - Results tab: show all results of that athlete for the current year
