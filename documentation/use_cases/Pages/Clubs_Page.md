@@ -16,7 +16,7 @@ A general user of the application without admin access
 5. Backend receives data in JSON format and hands back to frontend
 6. Frontend formats data for displaying to the user
 7. Web app displays a list of all facilities sorted by club points with an option to sort alphabetically or search bar
-    - upon clicking a club, the user will be redirected to [the individual facility page](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Facilities_Page_Individual.md)
+    - upon clicking a club, the user will be redirected to [the individual club page](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Clubs_Page_Individual)
 
 ### Alternate Flows
 - If there is some sort of error with communication between the server and endpoint
