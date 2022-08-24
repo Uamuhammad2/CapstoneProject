@@ -19,6 +19,7 @@ A general user of the application without admin access
 6. Backend handles the request by requesting information from the SQL server via query
 7. Backend receives data in JSON format and hands back to frontend
 8. Frontend formats data for displaying to the user
+    - *Only results with active memberships shall be displayed on this view*
     - a table with the columns: rank (based off filters), mark, Athlete name, athlete club, name of event, event location, date of event, athlete year of birth
     - each column header may be clicked to be sorted in ascending/descending order of marks based on that column
     - each element of the rows must link to the appropriate page 
