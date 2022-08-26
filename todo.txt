@@ -1,10 +1,5 @@
-results - needs to store relay team members
-need to manual edit results - requires specific access
 
-
-Members have an option to claim results without AC number if the lname year of birth matches with a result without an AC number
-
-calculate club points earned for multisport events (not given by hytek)
+calculate club points earned for multisport events (not given by hytek) // write trigger
 
 after upload, create a csv/pdf of all rejected results
 
