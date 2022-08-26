@@ -12,7 +12,9 @@ A general user of the application with admin access
 ### Main Flow
 1. User navigates to the upload page
 2. Web app displays option to upload a file(s) (csv or mdb)
-3. Backend parses the data and decides the correct endpoints
+3. Backend parses the data and decides the correct endpoints. [Link to the meanings of the columns](https://github.com/sunnehh/AthleticsOntario/blob/main/mdb_columns.txt)
+  - csv can be read by column
+  - mdb requires a library
 4. The insert commands are called from the endpoints and data is inserted into the database
 
 ### Alternate Flows

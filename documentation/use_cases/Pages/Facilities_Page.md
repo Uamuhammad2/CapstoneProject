@@ -15,7 +15,8 @@ A general user of the application without admin access
 4. Backend handles the request by requesting information from the SQL server via query
 5. Backend receives data in JSON format and hands back to frontend
 6. Frontend formats data for displaying to the user
-7. Web app displays a list of all facilities sorted alphabetically by default with an option to sort by distance
+7. Web app displays a list of all facilities sorted alphabetically by default with an option to [sort by distance](https://cloud.google.com/blog/products/maps-platform/how-calculate-distances-map-maps-javascript-api)
+    - upon clicking a club, the user will be redirected to [the individual facility page](https://github.com/sunnehh/AthleticsOntario/blob/main/documentation/use_cases/Pages/Facilities_Page_Individual.md)
 
 ### Alternate Flows
 - If there is some sort of error with communication between the server and endpoint

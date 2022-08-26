@@ -1,0 +1,15 @@
+Age performance % 
+      = your time / age standard time
+
+Age standard time 
+      = open standard time (world record) / age factor (some number less than 1, calculated by Alan Jones)
+
+         ie.  the record for male 5k trail run is 12:51 minutes
+            if i am 37 y/o male, my factor is 0.9706 (calculated by Alan jones)
+            the standard time for a 37 y/o male would thus be 13:14 minutes
+
+            if i ran the event in 18 minutes, i'd have an age performance of 0.7352
+
+Age graded time 
+      = your time * age factor 
+         ie.  18 minutes * 0.9706 = 17:47 (an estimate of what i'd run it in if i was prime age)

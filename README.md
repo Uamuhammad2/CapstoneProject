@@ -4,7 +4,7 @@ A hub for Athletics Ontario's information system
 This project aims to create a full-stack implementation of AO's (Athletics Ontario's) information system.
 A database will be created to house permanent information pertaining to ontario athletes as well as a web application for athletes and their coaches to view.
 
-The information system shall store long term meet results and link athlete results to the athlete via their Athletics Canada ID.
+The information system shall store long term meet results and link athlete results to the athlete via their Athletics Canada ID if they have one.
 The information system will have a 3-tiered approach.
 - Utilities for non-members shall include: 
   - View of rankings page for all results stored in the database and concise filters to allow the view of only pertinent information
