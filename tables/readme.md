@@ -66,12 +66,24 @@ mdb.Results(Event_name) will denote which table the result is entered in to
   - for athletes under 30, division is calculated as current_year - birth_year
   - for athletes over 30, division is calculated as DATEDIFF(year, (SELECT dob FROM dbo.MemberAthlete WHERE dbo.MemberAthlete(ac_num) = currentResult(Reg_no)), mdb.Meet(Meet_start))
   - ie. current_date - birth_date
+- facility_id
+  - match the facility name with the one in the database and input the id here
+- club_affil
+  - 4 character club code matches to one in the database
+- event_round
+  - P for preliminary, F for final, S for semifinal, Q for quaterfinal
+- event_season
+  - I for indoor, O for outdoor, matched with the meet
+- event_sex
+  - mdb.Results(Event_gender)
 - is_active
   - check whether the current athlete's membership is currently active
 - claimable
   - the default is 1 (true) and is set to false if a claim attempt has been made and declined
 - event_score
   - the amount of points this performance won for their club - TRIGGER will use this for calculations
+- event_placement
+- notes
 
 ## Dash_Result
 - event_distance
