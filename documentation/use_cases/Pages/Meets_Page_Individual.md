@@ -22,9 +22,8 @@ A general user of the application without admin access
     4. mark
     5. wind
     6. flight/heat
-    7. Attempt / split time
-    8. flag for active/inactive AC member
-    9. note
+    7. flag for active/inactive AC member
+    8. note
 4. events without completed results will not be clickable and flagged as not completed
 
 ### Alternate Flows

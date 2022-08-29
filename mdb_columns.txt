@@ -26,3 +26,21 @@ team-abbr - unique team ID
 team_lsc - ???
 relay_ltr - useless
 event_score - the score the event won for the clumb BUT also the multisport score
+res_heat - what heat the result was from
+res_lane - what lane you were in for the particular race 
+res_stat - if the field is not null, throw away the result
+Res_markDisplay - rounded mark (always round up)
+Res_mark - mark down to 0.00X
+res_meas - irrelevant
+res_handtime - useless ** if a mark is only accurate to 1 decimal place, it is hand timed
+res_wind - self explanatory
+res_agegradeDisplay - age graded mark
+res_agegrade - ???
+res_percent - 
+res_heatplace - self explanatory
+res_place - self explanatory
+res_exh - irrelevant
+res_note - only read if event note is empty - data will be decimal followed by string
+relayleg1_ath_no - 
+relayleg1_lastname - 
+relay_leg1_firstname - 
