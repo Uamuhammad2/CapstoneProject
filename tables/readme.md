@@ -1,3 +1,6 @@
+### to do
+write TRIGGERS to update Club(club_points) and Member_Athlete(total_points) AFTER INSERT into any of the * _Results tables
+
 # Tables
 
 ## Club
@@ -49,6 +52,8 @@ still unsure of how this will be created, it may need to be done manually by an 
 
 # *Results Tables*
 each result will have similar fields denoting generic data about the meet/athlete/etc
+mdb.Results(Event_name) will denote which table the result is entered in to
+
 - meet_id
   - match mdb.Meet(Meet_name) to dbo.Meet(primary_name) to get the dbo.meet_id
 - member_athlete
@@ -69,35 +74,159 @@ each result will have similar fields denoting generic data about the meet/athlet
   - the amount of points this performance won for their club - TRIGGER will use this for calculations
 
 ## Dash_Result
+- event_distance
+  - mdb.Results(Event_dist)
+- event_wind
+  - mdb.Results(Res_wind)
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark) - given in seconds.miliseconds
+  - need to convert to [time](https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql?view=sql-server-ver16) format before entering
+
 
 ## Run_Result
+- event_distance
+  - mdb.Results(Event_dist)
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark) - given in minutes:seconds.miliseconds
+  - need to convert to [time](https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql?view=sql-server-ver16) format before entering
+
 
 ## Hurdles_Result
+- event_distance
+  - mdb.Results(Event_dist)
+- event_hurdle_height
+  - mdb.Results(Event_note)
+- event_wind
+  - mdb.Results(Res_wind)
+  - 400m hurdles has no wind
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark) - given in seconds.miliseconds OR minutes:seconds.miliseconds
+  - need to convert to [time](https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql?view=sql-server-ver16) format before entering
 
 ## SteepleChase_Result
+- event_distance
+  - mdb.Results(Event_dist)
+- event_hurdle_height
+  - mdb.Results(Event_note)
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark) - given in minutes:seconds.miliseconds
+  - need to convert to [time](https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql?view=sql-server-ver16) format before entering
 
 ## RaceWalk_Result
+- event_distance
+  - mdb.Results(Event_dist)
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark) - given in minutes:seconds.miliseconds
+  - need to convert to [time](https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql?view=sql-server-ver16) format before entering
 
 ## Highjump_Result
-
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark)
 ## PoleVault_Result
-
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark)
 ## LongJump_Result
-
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark)
+- - event_wind
+  - mdb.Results(Res_wind)
 ## TripleJump_Result
-
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark)
+- event_wind
+  - mdb.Results(Res_wind)
 ## ShotPut_Result
-
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark)
+- implement_weight
+  - mdb.Results(Event_note)
 ## Discus_Throw Result
-
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark)
+- implement_weight
+  - mdb.Results(Event_note)
 ## JavelinThrow_Result
-
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark)
+- implement_weight
+  - mdb.Results(Event_note)
 ## HammerThrow_Result
-
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark)
+- implement_weight
+  - mdb.Results(Event_note)
 ## Relay_Result
-
+- total_distance
+  - mdb.Results(Event_dist)
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark) - given in minutes:seconds.miliseconds
+  - need to convert to [time](https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql?view=sql-server-ver16) format before entering
 ## MedleyRelay_Result
-
+- total_distance
+  - mdb.Results(Event_dist)
+- event_heat
+  - mdb.Results(Res_heat)
+- event_lane
+  - mdb.Results(Res_lane)
+- event_mark
+  - mdb.Results(Res_mark) - given in minutes:seconds.miliseconds
+  - need to convert to [time](https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql?view=sql-server-ver16) format before entering
 ## Tetrathlon_Result
 
 ## Pentathlon_Result
