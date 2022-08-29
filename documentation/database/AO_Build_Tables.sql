@@ -1,7 +1,8 @@
 CREATE TABLE Club(
 	club_code VARCHAR(4) NOT NULL UNIQUE,
 	club_name VARCHAR (50) NOT NULL UNIQUE,
-	club_points INT -- total *_Result(event_score) for every result with this club affiliation for the calendar year
+	club_points INT, -- total *_Result(event_score) for every result with this club affiliation for the calendar year
+	PRIMARY KEY (club_code)
 )
 
 CREATE TABLE Facility(
@@ -56,9 +57,14 @@ CREATE TABLE Competition_Category(
 	category_id INT IDENTITY(1,1) NOT NULL,
 	comp_level VARCHAR(20),
 	comp_type VARCHAR(20),
-	award INT NOT NULL,
+	first INT,
+	second INT,
+	third INT,
+
 	PRIMARY KEY(category_id),
+	FOREIGN KEY (award) REFERENCES Competition_Points(point_id),
 )
+
 
 -- to be clarified about championship points
 CREATE TABLE Meet(
