@@ -8,6 +8,14 @@ Tasks assigned shall be agreed upon as a team
 The primary form of contact shall be through the discord group chat
 During the sprint, members are expected to check the group chat once a day at minimum and read up on any missed discussions
 
+## Communications
+- Discord
+- Github
+- Drive
+
+## Tools
+Members are free to use whichever IDE they are comfortable with provided they are using the technologies outlined in the [technical details](https://github.com/CAPSTONE-2022-2023/Group_20/blob/main/technical_details.md)
+
 ### Product Owner
 Sunny shall be available for contact on Discord at Sunny#2222 through private message for brief questions 7 days a week during reasonable hours (not in the middle of the night)
 a response can be expected usually within a few hours.
