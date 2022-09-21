@@ -35,5 +35,6 @@ For more detailed information/clarification that requires the input of the clien
 ## Absence 
 - In the case of an absence during a meeting without prior notification to the team - a grade of 0 (zero) shall be received for that meeting without exception
   - Absences due to unavoidable circumstances where the team members were notified prior are exempt from the above clause
+  - Absences due to unforseen circumstances where the team was not notified prior are exempt from the above clauses with the discretion of the team 
 - In the case of an absence during a sprint / assigned task was incomplete without ample prior warning and requested assistance, said team member shall be subject to removal from the team
 - In the case a member becomes unreachable during a sprint without prior agreement from the team, said member's task shall be reassigned and the instructor shall be notified. Said member shall be subject to removal from the group.
