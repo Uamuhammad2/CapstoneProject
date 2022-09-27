@@ -22,15 +22,6 @@ a response can be expected usually within a few hours.
 
 For more detailed information/clarification that requires the input of the client, a resolution can be expected within a business day. 
 
-## Definition of Done
-- Tasks must pass acceptance criteria
-- Unit tests passed
-- Code reviewed for logic / continuity / readability
-- Tasks must reflect the use-case and be error-free
-- Functionality tests passed
-- Documentation is clear
-- Build is deployed to environment
-- Tasks must be to the specification of the client
 
 ## Absence 
 - In the case of an absence during a meeting without prior notification to the team - a grade of 0 (zero) shall be received for that meeting without exception
