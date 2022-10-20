@@ -1,5 +1,5 @@
 # Git Workflow
-This document outlines the various operations and procedures that will be required while using git on this project. Some operations (such as the initial setup) only need to be done once, while others (like switching branches, or committing changes) will need to be done regularly.
+This document outlines the various operations and procedures that will be required while using git on this project. Some operations (such as the initial setup) only need to be done once, while others (like switching branches, or committing changes) will need to be done regularly. While the examples within the documentation here are for the command line, as long as the general procedures are followed it is permitted to use an IDE or a graphical tool instead.
 
 *NOTE: This document is subject to changes at any time, please review it prior to completing repeatable steps such as pull requests. Failure to do so may results in your pull request or other actions being denied or reverted.*
 
@@ -18,18 +18,19 @@ All independent features should be developed within their own branch, as this al
 While working on your code, please ensure to commit changes regularly. Doing so allows is to track when/where bugs may be introduced, and allows developers to rollback to earlier versions easier. Descriptive commit messages are also required. They don't need to be long, saying something like "corrected typos on landing page" is acceptable. "stuff" is not.
 
 ## Creating a Pull Request For a Completed Feature
-Filler description
-1. first
-2. second
-3. third
+Pull requests are a complex feature, and instead of re-inventing the wheel (and leaving something out) we instead are going to refer you to the [official GitHub documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) for the process. The following is just a brief reference.
+
+1. Go to the [Pull Requests](https://github.com/CAPSTONE-2022-2023/Group_20/pulls) page on github
+2. Click on the `New pull request` button
+3. Select `compare: main`, and then select your feature's branch
+4. Should the branches be able to merge, you should then review your commits.
+    * If you are unable to merge, stop and follow the [Dealing with Conflicts When Merging](#dealing-with-conflicts-when-merging) instructions. Once the conflicts are resolved you may continue
+5. Press the `Create pull request` button to create your pull request.
 
 *NOTE: All pull requests into `main` require at least one (1) other developer to review the code. Individual developers are not permitted to accept their own pull requests. Failure to do so will be treated the same as committing directly to `main`.*
 
 ## Dealing with Conflicts When Merging
-Filler description
-1. first
-2. second
-3. third
+As with [Creating a Pull Request For a Completed Feature](#creating-a-pull-request-for-a-completed-feature) merging conflicts is a complex process, and we will be following the [offical GitHub documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts) for merging. 
 
 # Individual Steps
 ## Clone the Repo Locally
