@@ -8,12 +8,12 @@ This document outlines the various operations and procedures that will be requir
 ## Initial Setup
 These steps should only need to be done once, when first setting up the local repo. Once complete you will have a copy of the git repo on your machine. The steps for doing so are as followed:
 1. [Ensure Git is installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-2. [Clone the repo locally](#clone-the-repo-locally)
+2. [Clone the repo locally](#clone-the-repo)
 
 ## Creating A New Feature
 All independent features should be developed within their own branch, as this allows us to avoid 'stepping on each others toes'. Should a feature not be developed within it's own branch and instead be committed directly to main, or multiple features are being worked on within one branch; said commits will be reverted.
-1. [Create a branch for you feature](#create-a-branch) - Make sure to use a descriptive name. e.g `sql-database-driver` is an effective name, `database-driver` or `db` are not.
-2. [Checkout (switch) to your newly created branch](#switch-to-the-feature-branch)
+1. [Create a branch for your feature](#create-a-branch) - Make sure to use a descriptive name. e.g `sql-database-driver` is an effective name, `database-driver` or `db` are not.
+2. [Checkout (switch) to your newly created branch](#change-your-working-branch)
 
 While working on your code, please ensure to commit changes regularly. Doing so allows is to track when/where bugs may be introduced, and allows developers to rollback to earlier versions easier. Descriptive commit messages are also required. They don't need to be long, saying something like "corrected typos on landing page" is acceptable. "stuff" is not.
 
@@ -30,11 +30,14 @@ Pull requests are a complex feature, and instead of re-inventing the wheel (and 
 *NOTE: All pull requests into `main` require at least one (1) other developer to review the code. Individual developers are not permitted to accept their own pull requests. Failure to do so will be treated the same as committing directly to `main`.*
 
 ## Dealing with Conflicts When Merging
-As with [Creating a Pull Request For a Completed Feature](#creating-a-pull-request-for-a-completed-feature) merging conflicts is a complex process, and we will be following the [offical GitHub documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts) for merging. 
+As with [Creating a Pull Request For a Completed Feature](#creating-a-pull-request-for-a-completed-feature) merging conflicts is a complex process, and we will be following the [official GitHub documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts) for merging. 
 
-# Individual Steps
-## Clone the Repo Locally
-TODO
+# Git Commands
+## Clone the Repo
+This will create a local copy of the repository on your machine. The `REPO_URL` is required, however the directory is optional. If omitted the current directory will be used.
+```
+git clone REPO_URL [DIRECTORY]
+```
 
 Example:
 ```
@@ -42,18 +45,27 @@ git clone https://github.com/CAPSTONE-2022-2023/Group_20
 ```
 
 ## Create A Branch
-TODO
+```
+git branch BRANCH_NAME
+```
 
 Example:
 ```
 git branch github-workflow
 ```
 
-## Switch to the feature branch
-TODO
+## Change your working branch
+```
+git checkout BRANCH_NAME
+```
+
+Example:
+```
+git checkout github-workflow
+```
 
 ## Commit Changes Locally
-TODO
+This will add/update files as well act as a 'checkpoint' for future changes. It will be possible to view and rewind to changes made after files have been committed.
 
 Example (no new files):
 ```
@@ -67,7 +79,7 @@ git commit -m "Added new_file.md"
 ```
 
 ## Push Changes to GitHub
-TODO
-
-## Create a Pull Request
-TODO
+There needs to be at least one change made to be able to push files to GitHub. This could be the creation of a new branch, or any new commits made to a branch. If the branch already exists and there are no new commits, the command will fail.
+```
+git push origin BRANCH_NAME
+```
