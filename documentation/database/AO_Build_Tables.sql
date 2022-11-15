@@ -57,9 +57,9 @@ CREATE TABLE Competition_Category(
 	category_id INT IDENTITY(1,1) NOT NULL,
 	comp_level VARCHAR(20),
 	comp_type VARCHAR(20),
-	first INT,
-	second INT,
-	third INT,
+	first_place INT,
+	second_place INT,
+	third_place INT,
 
 	PRIMARY KEY(category_id),
 	FOREIGN KEY (award) REFERENCES Competition_Points(point_id),
@@ -70,7 +70,7 @@ CREATE TABLE Competition_Category(
 CREATE TABLE Meet(
 	meet_id INT IDENTITY(1,1) NOT NULL UNIQUE,
 	primary_name VARCHAR(255) NOT NULL,
-	pecondary_name VARCHAR(255) NOT NULL,
+	secondary_name VARCHAR(255) NOT NULL,
 	starts_on DATE NOT NULL,
 	ends_on DATE NOT NULL,
 	facility_id INT NOT NULL,
