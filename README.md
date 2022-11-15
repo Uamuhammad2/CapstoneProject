@@ -31,6 +31,6 @@ The web app will be created using React for the front end. The backend will be d
 | -------------       |:-------------: |
 | Product Owner       | Sunny Qi |
 | Network Specialist  | Matthew Bell |
-| Front-End Developer | Sunny Qi , Usman Muhammad   |
+| Front-End Developer | Sunny Qi |
 | Back-End Developer  | Sunny Qi , Matthew Bell |
 | Database Specialist | Sunny Qi     |
