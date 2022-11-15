@@ -862,3 +862,17 @@ CREATE TABLE Decathlon_Result(
 	FOREIGN KEY(javelinthrow_result) REFERENCES JavelinThrow_Result(result_id),
 	FOREIGN KEY(run_result_2) REFERENCES Run_Result(result_id),
 );
+
+
+CREATE TRIGGER Calc_Club_Points
+ON Dash_Result
+AFTER
+INSERT,UPDATE
+AS
+BEGIN
+	UPDATE Club
+	SET club_points = club_points + (SELECT event_score FROM inserted)
+	WHERE club_code = (SELECT club_affil FROM inserted)
+END
+GO
+
