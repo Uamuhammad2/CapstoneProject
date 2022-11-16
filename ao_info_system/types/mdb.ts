@@ -43,9 +43,31 @@ export interface Meet{
 }
 
 export interface Result{
+    Ath_no : number;
+    Comp_no : number;
+    Div_no : number;
 
+    Event_gender : string;
+    Event_name : string;
+    Full_Eventname : string;
+
+    First_name : string;
+    Last_name : string;
+
+    Reg_no : string;
+
+    //relay data
+
+    Res_place : number;
+    Team_Abbr : string;
+    Team_no : number;
+
+    //TODO get rest of data
 }
 
 export interface Team {
-
+    Team_no: number;
+    Team_abbr : string;
+    Team_name : string;
+    //TODO get rest of data
 }

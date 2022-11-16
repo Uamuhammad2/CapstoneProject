@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { FunctionComponent } from 'react'
-import { Athlete, Division, Entry, Meet } from '../types/mdb'
+import { Athlete, Division, Entry, Meet, Result, Team } from '../types/mdb'
 
 interface RenderProps {
     current : number;
@@ -41,8 +41,18 @@ const TABLES : TableData[] = [
     },
     {
         tableName: "Meet",
-        friendlyName: "Meets",
+        friendlyName: "Meet",
         component: MeetsTable
+    },
+    {
+        tableName: "Results",
+        friendlyName: "Results",
+        component: ResultsTable
+    },
+    {
+        tableName: "Team",
+        friendlyName: "Teams",
+        component: TeamsTable
     }
 ];
 
@@ -160,13 +170,79 @@ function MeetsTable(props : TableProps){
     </table>;
 }
 
+function ResultsTable(props : TableProps){
+    const rows = props.table.getData() as unknown as Result[];
+    return <table>
+        <thead>
+            <tr>
+                <th colSpan={9}>Entries</th>
+            </tr>
+            <tr>
+                <th colSpan={4}>IDs</th>
+                <th colSpan={7}>Data</th>
+            </tr>
+            <tr>
+                <th>Athlete #</th>
+                <th>Competition #</th>
+                <th>Team #</th>
+                <th>Division #</th>
+
+                <th>Event Name</th>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>Team</th>
+                <th>Athlete Name</th>
+                <th>Place</th>
+            </tr>
+        </thead>
+        <tbody>
+        {rows.map( (e, index) => <tr key = {index}>
+            <td>{e.Ath_no}</td>
+            <td>{e.Comp_no}</td>
+            <td>{e.Team_no}</td>
+            <td>{e.Div_no}</td>
+
+            <td>{e.Event_name}</td>
+            <td>{e.Full_Eventname}</td>
+            <td>{e.Event_gender}</td>
+            <td>{e.Team_Abbr}</td>
+            <td>{e.First_name} {e.Last_name}</td>
+            <td>{e.Res_place}</td>
+        </tr>)}
+        </tbody>
+    </table>;
+}
+
+function TeamsTable(props : TableProps){
+    const rows = props.table.getData() as unknown as Team[];
+    return <table>
+        <thead>
+            <tr>
+                <th colSpan={3}>Teams</th>
+            </tr>
+            <tr>
+                <th>#</th>
+                <th>Abr.</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        {rows.map( (e, index) => <tr key = {index}>
+            <td>{e.Team_no}</td>
+            <td>{e.Team_abbr}</td>
+            <td>{e.Team_name}</td>
+        </tr>)}
+        </tbody>
+    </table>;
+}
+
 const RenderTable : NextPage<RenderProps> = (props) =>{
     const mdb = props.mdb as MDBReader;
     if(!mdb || Object.keys(mdb).length == 0){
         return <h1>Please select a file!</h1>;
     }
     console.log(mdb.getTableNames());
-    console.log(mdb.getTable("Meet").getData());
+    console.log(mdb.getTable("Team").getData());
     console.log(props.current);
     const current = TABLES[props.current];
     return current.component({table: mdb.getTable(current.tableName)});
@@ -202,7 +278,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
         <form>
-            <input type="file" onChange={onUpload} accept=".mdb"/>
+            <input type="file" onChange={onUpload} accept=".mdb"/> <br/>
             <select onChange={onTableChange} value={selected}>
                 {TABLES.map((table, index) => <option key={index} value={index}>{table.friendlyName}</option>)}
             </select>
