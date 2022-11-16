@@ -1,0 +1,18 @@
+.layout {
+    min-height: 100vh;
+}
+
+.logo{
+    margin: 10px;
+}
+
+.footer{
+    color: rgba(0,0,0,0.5);
+    background-color: #ccc;
+    display: flex;
+}
+
+.footer_item{
+    width: 50%;
+    text-align: center;
+}
