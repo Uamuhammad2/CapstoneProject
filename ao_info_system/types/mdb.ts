@@ -1,0 +1,51 @@
+//These are the interfaces defining what is contained within an mdb file.
+
+export interface Athlete {
+    Ath_no : number;
+    Ath_Sex : string;
+    Ath_age: number;
+    First_name : string;
+    Last_name : string;
+
+    //TODO rest of data
+}
+
+export interface Division{
+    Div_name : string;
+    Div_no : number;
+
+    //TODO rest of data
+}
+
+export interface Entry{
+    Ath_no : number;
+    Comp_no : number;
+    Team_no : number;
+    Div_no : number;
+
+    Event_name : string;
+    Full_Eventname : string;
+    Event_gender : string;
+    Team_Abbr : string;
+    First_name : string;
+    Last_name : string;
+
+    //TODO rest of data
+}
+
+export interface Meet{
+    Meet_start : Date;
+    Meet_end : Date;
+    Meet_header1 : string;
+    Meet_header2 : string;
+    Meet_location : string;
+    Meet_name : string;
+}
+
+export interface Result{
+
+}
+
+export interface Team {
+
+}
