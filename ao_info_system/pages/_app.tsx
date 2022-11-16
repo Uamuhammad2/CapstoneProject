@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
-import "antd/dist/antd.dark.css"
+import "antd/dist/antd.dark.less"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />

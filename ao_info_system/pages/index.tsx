@@ -36,8 +36,9 @@ const Home: NextPage = () => {
       <Menu items = {items} theme="dark"/>
     </Sider>
     <Layout>
-    <Content className={styles.content}>main content</Content>
-    <Footer>footer</Footer>
+      <Header >header</Header>
+      <Content className={styles.content}>main content</Content>
+      <Footer>footer</Footer>
     </Layout>
 </Layout>
   )

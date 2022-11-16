@@ -2,8 +2,6 @@ import type { NextPage } from 'next'
 
 import MDBReader, { Table } from 'mdb-reader'
 
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { FunctionComponent } from 'react'
 import { Athlete, Division, Entry, Meet, Result, Team } from '../types/mdb'
