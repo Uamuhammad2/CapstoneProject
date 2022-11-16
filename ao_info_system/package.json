@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^4.24.2",
     "mdb-reader": "^2.2.5",
     "next": "12.2.3",
     "react": "18.2.0",
