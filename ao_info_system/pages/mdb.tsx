@@ -5,9 +5,34 @@ import MDBReader, { Table } from 'mdb-reader'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+
+interface TableData{
+    tableName : string;
+    friendlyName :string;
+    component : FunctionComponent<TableProps>;
+}
+
+const TABLES : TableData[] = [
+    {
+        tableName: "Athlete",
+        friendlyName: "Athletes",
+        component: AthletesTable
+    },
+    {
+        tableName: "Divisions",
+        friendlyName: "Divisions",
+        component: DivisionsTable
+    },
+    {
+        tableName: "Entries",
+        friendlyName: "Entries",
+        component: EntriesTable
+    }
+];
 
 interface RenderProps {
+    current : number;
     mdb : any;
 }
 
@@ -45,9 +70,7 @@ interface Entry{
 
 function AthletesTable(props : TableProps){
     const rows = props.table.getData() as unknown as Athlete[];
-    return <table style = {{
-        float: "left"
-    }}>
+    return <table>
         <thead>
             <tr>
                 <th colSpan={5}>Athletes</th>
@@ -74,9 +97,7 @@ function AthletesTable(props : TableProps){
 
 function DivisionsTable(props : TableProps){
     const rows = props.table.getData() as unknown as Division[];
-    return <table style = {{
-        float: "left"
-    }}>
+    return <table>
         <thead>
             <tr>
                 <th colSpan={5}>Divisions</th>
@@ -97,9 +118,7 @@ function DivisionsTable(props : TableProps){
 
 function EntriesTable(props : TableProps){
     const rows = props.table.getData() as unknown as Entry[];
-    return <table style = {{
-        float: "left"
-    }}>
+    return <table>
         <thead>
             <tr>
                 <th colSpan={9}>Entries</th>
@@ -145,16 +164,15 @@ const RenderTable : NextPage<RenderProps> = (props) =>{
     }
     console.log(mdb.getTableNames());
     console.log(mdb.getTable("Entries").getData());
-    return <div>
-                <DivisionsTable table={ mdb.getTable("Divisions")} />
-        <AthletesTable table= {mdb.getTable("Athlete")}/>
-        <EntriesTable table={mdb.getTable("Entries")}/>
-    </div>;
+    console.log(props.current);
+    const current = TABLES[props.current];
+    return current.component({table: mdb.getTable(current.tableName)});
 };
 
 const Home: NextPage = () => {
 
     const [db, setDb] = React.useState({});
+    const [selected, setSelected] = React.useState(0);
 
     function onUpload(event: React.ChangeEvent<HTMLInputElement>){
         if(event.target.files){
@@ -174,12 +192,19 @@ const Home: NextPage = () => {
         }
     }
 
+    function onTableChange(event : React.ChangeEvent<HTMLSelectElement>) {
+        setSelected(event.target.value as unknown as number)
+    }
+
   return (
     <div className={styles.container}>
         <form>
             <input type="file" onChange={onUpload} accept=".mdb"/>
+            <select onChange={onTableChange} value={selected}>
+                {TABLES.map((table, index) => <option key={index} value={index}>{table.friendlyName}</option>)}
+            </select>
         </form>
-        <RenderTable mdb={db} />
+        <RenderTable mdb={db} current = {selected}/>
     </div>
   )
 }
