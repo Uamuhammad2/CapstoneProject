@@ -241,9 +241,6 @@ const RenderTable : NextPage<RenderProps> = (props) =>{
     if(!mdb || Object.keys(mdb).length == 0){
         return <h1>Please select a file!</h1>;
     }
-    console.log(mdb.getTableNames());
-    console.log(mdb.getTable("Team").getData());
-    console.log(props.current);
     const current = TABLES[props.current];
     return current.component({table: mdb.getTable(current.tableName)});
 };
