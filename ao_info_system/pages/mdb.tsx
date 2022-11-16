@@ -6,6 +6,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { FunctionComponent } from 'react'
+import { Athlete, Division, Entry, Meet } from '../types/mdb'
+
+interface RenderProps {
+    current : number;
+    mdb : any;
+}
+
+interface TableProps{
+    table : Table;
+}
 
 interface TableData{
     tableName : string;
@@ -28,45 +38,13 @@ const TABLES : TableData[] = [
         tableName: "Entries",
         friendlyName: "Entries",
         component: EntriesTable
+    },
+    {
+        tableName: "Meet",
+        friendlyName: "Meets",
+        component: MeetsTable
     }
 ];
-
-interface RenderProps {
-    current : number;
-    mdb : any;
-}
-
-interface TableProps{
-    table : Table;
-}
-
-//these should probably be in their own file
-interface Athlete {
-    Ath_no : number;
-    Ath_Sex : string;
-    Ath_age: number;
-    First_name : string;
-    Last_name : string;
-}
-
-interface Division{
-    Div_name : string;
-    Div_no : number;
-}
-
-interface Entry{
-    Ath_no : number;
-    Comp_no : number;
-    Team_no : number;
-    Div_no : number;
-
-    Event_name : string;
-    Full_Eventname : string;
-    Event_gender : string;
-    Team_Abbr : string;
-    First_name : string;
-    Last_name : string;
-}
 
 function AthletesTable(props : TableProps){
     const rows = props.table.getData() as unknown as Athlete[];
@@ -157,13 +135,38 @@ function EntriesTable(props : TableProps){
     </table>;
 }
 
+function MeetsTable(props : TableProps){
+    const rows = props.table.getData() as unknown as Meet[];
+    return <table>
+        <thead>
+            <tr>
+                <th colSpan={4}>Meet</th>
+            </tr>
+            <tr>
+                <th>Start</th>
+                <th>End</th>
+                <th>Name</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+        {rows.map( (e, index) => <tr key = {index}>
+            <td>{e.Meet_start.toDateString()}</td>
+            <td>{e.Meet_end.toDateString()}</td>
+            <td>{e.Meet_name}</td>
+            <td>{e.Meet_location}</td>
+        </tr>)}
+        </tbody>
+    </table>;
+}
+
 const RenderTable : NextPage<RenderProps> = (props) =>{
     const mdb = props.mdb as MDBReader;
     if(!mdb || Object.keys(mdb).length == 0){
         return <h1>Please select a file!</h1>;
     }
     console.log(mdb.getTableNames());
-    console.log(mdb.getTable("Entries").getData());
+    console.log(mdb.getTable("Meet").getData());
     console.log(props.current);
     const current = TABLES[props.current];
     return current.component({table: mdb.getTable(current.tableName)});
