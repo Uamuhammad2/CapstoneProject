@@ -1,4 +1,4 @@
-import { Button, Form, Input, Layout } from "antd";
+import { Button, Form, Input } from "antd";
 import Image from 'next/image'
 import { LoginLayout } from "../components/layouts";
 import { NextPageWithLayout } from "./_app";
@@ -6,6 +6,7 @@ import { NextPageWithLayout } from "./_app";
 import logo from "../public/logo.png"
 
 const Login : NextPageWithLayout = () =>{
+    //TODO move styling to css file
     return <div style={{
         display: "flex",
         alignItems: "center",
