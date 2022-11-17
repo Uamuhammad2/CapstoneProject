@@ -29,6 +29,8 @@ The web app will be created using React for the front end. The backend will be d
 
 | Project Role        | Assigned        |    
 | -------------       |:-------------: |
-| Front-End Developer | Sunny Qi , Usman Muhammad   |
-| Back-End Developer  | Sunny Qi , Usman Muhammad |
-| Database Specialist | Sunny Qi , Usman Muhammad    |
+| Product Owner       | Sunny Qi |
+| Network Specialist  | Matthew Bell |
+| Front-End Developer | Sunny Qi |
+| Back-End Developer  | Sunny Qi , Matthew Bell |
+| Database Specialist | Sunny Qi     |
