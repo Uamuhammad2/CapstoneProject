@@ -8,7 +8,8 @@ import styles from "../../styles/layout/sider.module.css"
 
 //TODO make this dynamic
 const items = [
-    { label: 'Home', key: 'home' },
+    { label: <Link href="/">Home</Link>, key: 'home' },
+    { label: <Link href="/mdb">MDB</Link>, key: 'mdb' },
     { label: 'Competitions', key: 'comp' },
     { label: 'Members', key: 'members' },
     { label: 'Rankings', key: 'rankings' },
