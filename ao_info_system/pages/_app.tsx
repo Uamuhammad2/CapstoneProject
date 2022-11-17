@@ -1,5 +1,6 @@
 import '../styles/globals.css'
-import "antd/dist/antd.dark.less"
+
+import "../styles/theme.less"
 
 import type { AppProps } from 'next/app'
 import Layout, { Content, Footer, Header } from 'antd/lib/layout/layout'
