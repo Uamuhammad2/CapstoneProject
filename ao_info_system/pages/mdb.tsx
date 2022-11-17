@@ -33,42 +33,11 @@ function RenderTable(props : any){
 const Home: NextPage = () => {
 
     const [db, setDb] = React.useState({});
-    const [selected, setSelected] = React.useState(0);
-
-    function onUpload(event: React.ChangeEvent<HTMLInputElement>){
-        if(event.target.files){
-            const file = event.target.files[0];
-            console.log(event.target.files[0])
-            const reader = new FileReader();
-    
-            reader.onload = (result) =>{
-                let data : ArrayBuffer = result.target?.result as ArrayBuffer;
-    
-                if(data){
-                    setDb(new MDBReader(Buffer.from(data)))
-                }
-            }
-    
-            reader.readAsArrayBuffer(file);
-        }
-    }
-
-    function onTableChange(event : React.ChangeEvent<HTMLSelectElement>) {
-        setSelected(event.target.value as unknown as number)
-    }
-
-    const [fileList, setFileList] = React.useState<UploadFile[]>([]);
 
     const uploadProps : UploadProps = {
         multiple: false,
-        onChange: info =>{
-            let newList = [...info.fileList];
-            newList = newList.slice(-1);
-            setFileList(newList);
-            if(newList.length == 0){
-                setDb({});
-            }
-        },
+        maxCount: 1,
+        accept: ".mdb",
         beforeUpload: file =>{
             const reader = new FileReader();
     
@@ -124,7 +93,7 @@ const Home: NextPage = () => {
         name="basic"
         >
             <Form.Item label="MDB File:" name="file">
-                <Upload {...uploadProps} fileList={fileList}><Button>Select File</Button></Upload>
+                <Upload {...uploadProps}><Button>Select File</Button></Upload>
             </Form.Item>
         </Form>
         <Tabs items = {tabItems} hidden={!Object.keys(db).length}/>
