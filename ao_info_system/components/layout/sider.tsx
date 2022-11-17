@@ -27,7 +27,7 @@ const items = [
 export default function SiderComponent(){
     return <Sider>
         <Link href="#" className={styles.logo}>
-            <Image src={logo}/>
+            <Image src={logo} alt="logo"/>
         </Link>
         <Menu items = {items} theme="dark"/>
   </Sider>
