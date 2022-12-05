@@ -1,0 +1,16 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.welcome {
+    font-size: 6vh;
+}
+
+.message {
+    font-size: 2vh;
+}
