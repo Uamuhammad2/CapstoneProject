@@ -24,15 +24,3 @@ a {
     background: black;
   }
 } */
-
-.flex-space-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.flex-center {
-  display: flex;
-}
-.flex-center > *:not(:last-child) {
-  margin-right: 5px;
-}
