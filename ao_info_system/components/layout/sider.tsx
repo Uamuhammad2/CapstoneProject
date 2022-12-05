@@ -10,8 +10,8 @@ import styles from "../../styles/layout/sider.module.css"
 const items = [
     { label: <Link href="/">Home</Link>, key: 'home' },
     { label: <Link href="/mdb">MDB</Link>, key: 'mdb' },
-    { label: <Link href="/competition">Competition</Link>, key: 'comp' },
-    { label: <Link href="/member">Members</Link>, key: 'members' },
+    { label: 'Competitions', key: 'comp' },
+    { label: 'Members', key: 'members' },
     { label: 'Rankings', key: 'rankings' },
     { label: 'Push Notifications', key: 'push' },
     {
