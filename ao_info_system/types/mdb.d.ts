@@ -1,5 +1,5 @@
 //These are the interfaces defining what is contained within an mdb file.
-
+import moment from 'moment';
 export interface Athlete {
     Ath_no : number;
     Ath_Sex : string;
@@ -70,4 +70,29 @@ export interface Team {
     Team_abbr : string;
     Team_name : string;
     //TODO get rest of data
+}
+export interface ICompetition {
+
+    id: any;
+    name: string
+    subname: string
+    start: Date | moment
+    end: Date | moment
+    event: string
+    facility: string
+    location: string
+    comptype: string
+    compsubtype: string
+    season: string
+}
+
+export interface IMember {
+
+    id: string
+    firstname: string
+    lastname: string
+    dob: Date | moment
+    gender: 'Male' | 'Female'
+    club: string
+    role: string
 }
