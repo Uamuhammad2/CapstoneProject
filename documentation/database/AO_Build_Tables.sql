@@ -876,3 +876,60 @@ BEGIN
 END
 GO
 
+CREATE TRIGGER Calc_Member_Points
+ON Dash_Result
+AFTER
+INSERT,UPDATE
+AS
+BEGIN
+	DECLARE @Placement AS INT
+	DECLARE @Category AS INT
+	DECLARE @ChampionshipPoints as INT
+	DECLARE @myMeet as INT
+	SELECT @myMeet = ((SELECT m1.comp_type FROM Meet m1, inserted ins WHERE m1.meet_id = ins.meet_id))
+	SELECT @Category = (SELECT Competition_Category.category_id FROM Competition_Category WHERE Competition_Category.category_id = @myMeet)
+	SELECT @Placement = (SELECT event_placement FROM inserted)
+
+	
+	IF (@Placement = 1)
+		BEGIN
+		UPDATE Member_Athlete
+		SET total_points = total_points + (SELECT first_place FROM Competition_Category WHERE category_id = @Category)
+		END
+	ELSE IF (@Placement = 2)
+		BEGIN
+		UPDATE Member_Athlete
+		SET total_points = total_points + (SELECT second_place FROM Competition_Category WHERE category_id = @Category)
+		END
+	ELSE IF (@Placement = 3)
+		BEGIN
+		UPDATE Member_Athlete
+		SET total_points = total_points + (SELECT third_place FROM Competition_Category WHERE category_id = @Category)
+		END
+END
+GO
+
+SELECT * FROM Club
+SELECT * FROM Meet
+SELECT * FROM Facility
+SELECT * FROM Competition_Category
+SELECT * FROM Member_Athlete
+SELECT * FROM Dash_Result
+
+INSERT INTO Club (club_code, club_name, club_points)
+VALUES ('BLUE', 'Blue Devils Athletics Club', 0)
+
+INSERT INTO Facility(facility_name, street_address, city, province, postal_code, lat, long, contact)
+VALUES ('Toronto Track and Field Centre', '231 Ian MacDonald Blvd,', 'North York', 'ON', 'M7A 2C5', 43.777492, -79.50721, 'https://www.toronto.ca/data/parks/prd/facilities/complex/460/index.html')
+
+INSERT INTO Competition_Category(comp_level, comp_type, first_place, second_place, third_place)
+VALUES ('National', 'Championships', 8, 4, 2)
+
+INSERT INTO Meet(primary_name, secondary_name, starts_on, ends_on, facility_id, comp_type, schedule_link)
+VALUES('2021 Ontario Championships', 'U18 Championships', '2021-08-07',  '2021-08-08', 1, 1, 'fakelink')
+
+INSERT INTO Member_Athlete(ac_num, fname, lname, dob, sex, current_club, member_since, is_active, total_points)
+VALUES (0756198, 'Sydney', 'Daniels', '2007-05-23', 'F', 'BLUE', '2004-01-20', 1, 0)
+
+INSERT INTO Dash_Result(meet_id, member_athlete, division, facility_id, club_affil, event_round, event_season, event_sex, is_active, claimable, event_score, event_placement, event_distance, event_wind, event_heat, event_lane, event_mark)
+VALUES(1, 0756198, 'U18', 1, 'BLUE', 'F', 'O', 'F', 1, 0, 6, 1, 400,-0.4 , 2, 7, '00:01:07.66')
